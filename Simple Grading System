@@ -1,0 +1,72 @@
+print("Welcome to Simple Grading System")
+print()
+
+def menu ():
+    print("[1] Add student's name")
+    print("[2] Add student's marks")
+    print("[3] Average student's mark")
+    print("[4] Determine letter grade")
+    print("[5] Display report")
+    print("[6] Exit")
+    
+menu()
+select = int(input("Please enter number of option: "))
+
+while select != 6:
+    if select == 1:
+        print()
+        name = input("Enter your name: ")
+    elif select == 2:
+        print()
+        print("Enter student's marks: ")
+        basic = input("1) Basic Software: ")
+        os = input("2) Operating System: ")
+        it = input("3) IT Essentials: ")
+    elif select == 3:
+        print()
+
+        def calculate_average_grade(student_grades):
+            total = sum(student_grades)
+            average = total / 3
+            return average
+
+
+        student_grades = [float(basic),float(os),float(it)]
+        average_grade_num = calculate_average_grade(student_grades)
+        print (f"The average grade of the student is: {average_grade_num}")
+
+    elif select == 4:
+        print()
+        
+        def determine_letter_grade(average):
+            if 90 <= average <= 100:
+                return 'A'
+            elif 80 <= average < 90:
+                return 'B'
+            elif 70 <= average < 80:
+                return 'C'
+            elif 60 <= average < 70:
+                return 'D'
+            elif 0 <= average < 60:
+                return 'F'
+            else:
+                return 'Invalid grade'
+
+
+        average_grade = int(average_grade_num)
+        letter_grade = determine_letter_grade(average_grade)
+        print(f"The letter grade is: {letter_grade}")
+
+    elif select == 5:
+        print()
+        print(f"Name: {name}")
+        print(f"Your average marks are: {average_grade_num}")
+        print(f"Your overall grade is: {letter_grade}")
+    else:
+        print()
+        print ("Invalid Option!")
+    print()
+    menu()
+    select = int(input("Please enter number of option: "))
+print ("Thank you for using this program. Goodbye.")
+
